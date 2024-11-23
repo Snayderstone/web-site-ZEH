@@ -11,13 +11,21 @@
 		<a class="logo" href="/" aria-label="Site logo">
 			<Logo />
 		</a>
+		
 		<div class="links">
 			<a href="/blog">Blog</a>
 			<RssLink />
 			<ThemeToggle />
 		</div>
+
+		<div class="links">
+			
+		</div>
 	</nav>
+
+
 </header>
+
 
 <style lang="scss">
 	@import '$lib/scss/breakpoints.scss';

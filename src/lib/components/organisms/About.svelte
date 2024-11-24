@@ -7,8 +7,8 @@
 <section id="about">
 	<div class="info">
 		<h2>
-			This is a catchy headline that
-			<SparklingHighlight color="secondary">sparkles!</SparklingHighlight>
+			No solo ahorra energía, sino que redefine cómo vivimos en armonía con el planeta🌍
+			<SparklingHighlight color="secondary">ZEH!</SparklingHighlight>
 		</h2>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum velit voluptatibus commodi
@@ -21,7 +21,7 @@
 	</div>
 	<div class="image">
 		<Image
-			src="/images/sample-image.png"
+			src="/images/solar-panel.png"
 			alt="Sample for the static template"
 		/>
 	</div>

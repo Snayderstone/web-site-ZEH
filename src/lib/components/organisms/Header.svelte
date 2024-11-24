@@ -2,6 +2,7 @@
 	import Logo from '$lib/components/atoms/Logo.svelte';
 	import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
 	import RssLink from '$lib/components/atoms/RssLink.svelte';
+	import GitHubIcons from '$lib/components/atoms/GitHubLink.svelte';
 
 	export let showBackground = false;
 </script>
@@ -11,21 +12,31 @@
 		<a class="logo" href="/" aria-label="Site logo">
 			<Logo />
 		</a>
-		
+
+		<div class="links">
+			<a href="/">Home</a>
+		</div>
+
+		<div class="links">
+			<a href="/lineal-programing">Simulador OTPSB</a>
+		</div>
+
+		<div class="links">
+			<a href="/about">About</a>
+		</div>
+
+		<div class="links">
+			<a href="/contactUs">Contact Us</a>
+		</div>
+
 		<div class="links">
 			<a href="/blog">Blog</a>
 			<RssLink />
 			<ThemeToggle />
-		</div>
-
-		<div class="links">
-			
+			<GitHubIcons />
 		</div>
 	</nav>
-
-
 </header>
-
 
 <style lang="scss">
 	@import '$lib/scss/breakpoints.scss';

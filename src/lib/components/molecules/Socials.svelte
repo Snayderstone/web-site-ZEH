@@ -32,6 +32,7 @@
 	>
 		<GitHubIcon />
 	</a>
+	
 	<a
 		href="#"
 		target="_blank"

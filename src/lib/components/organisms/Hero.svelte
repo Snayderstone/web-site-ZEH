@@ -9,13 +9,14 @@
 	<h1 class="hello">Optimización Energética para Hogares con Energía Solar en Ecuador (OEHESE) </h1>
 	<p class="intro">
 		<span class="left">⚡ Innovación que impulsa ,</span>
-		<span class="right">un futuro sostenible.🌱.</span>
+		<span class="right">un futuro sostenible...🌱.</span>
 	</p>
 	<div class="ctas">
 		<Sparkles>
 			<Button href="https://github.com/matfantinel/sveltekit-static-blog-template">
 				<GitHubIcon slot="icon" />
 				Source Code
+
 			</Button>
 		</Sparkles>
 		<Button color="primary" href="https://histoire-sveltekit-static-blog-template.vercel.app/">

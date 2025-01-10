@@ -24,7 +24,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<Waves />
+<!--<Waves />-->
 
 <Header />
 
@@ -33,3 +33,25 @@
 </main>
 
 <Footer />
+
+<style lang="scss">
+.layout {
+    display: grid;
+    min-height: 100dvh; /* Ocupa el 100% de la altura de la pantalla */
+    grid-template-rows: auto 1fr auto; /* Header, Main y Footer */
+
+    header {
+        background-color: #f5f5f5; /* Opcional, estilo del header */
+    }
+
+    main {
+        padding: 20px; /* Espacio interno para el contenido principal */
+    }
+
+    footer {
+        background-color: #e6f8f7; /* Fondo del footer */
+    }
+}
+</style>
+
+

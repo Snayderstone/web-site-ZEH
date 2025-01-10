@@ -1,73 +1,130 @@
 <script lang="ts">
-	import type { Feature } from '$lib/utils/types';
-	import FeatureCard from '$lib/components/molecules/FeatureCard.svelte';
-	import ContentSection from '$lib/components/organisms/ContentSection.svelte';
+    import ContentSection from '$lib/components/organisms/ContentSection.svelte';
 
-	export let features: Feature[];
+    const sections = [
+        {
+            id: 'mision',
+            title: 'NUESTRA MISIÓN',
+            description: `
+                Nuestra misión es liderar la transformación hacia un mundo más sostenible, impulsando la 
+                transición hacia una economía baja en carbono y mejorando la calidad de vida de las personas.
+                Nos enfocamos en proporcionar soluciones innovadoras y eficientes de energía renovable, 
+                eficiencia energética y transformación digital a nuestros clientes.`,
+            image: '/images/features/solar1.jpg',
+            cta: 'CONTÁCTANOS',
+            link: '/contactUs'
+        },
+        {
+            id: 'vision',
+            title: 'NUESTRA VISIÓN',
+            description: `
+                En Master Energy, nuestra visión es un mundo en el que la energía sostenible y limpia es 
+                accesible para todos. Creemos que la tecnología puede ser una fuerza para el bien y estamos 
+                dedicados a desarrollar soluciones tecnológicas innovadoras que aborden los desafíos más 
+                urgentes de nuestro tiempo.`,
+            image: '/images/features/solar2.jpg',
+            cta: 'CONTÁCTANOS',
+            link: '/contactUs'
+        },
+        {
+            id: 'valores',
+            title: 'NUESTROS VALORES',
+            description: `
+                1. Sostenibilidad: Protegemos el medio ambiente y reducimos la huella de carbono.<br>
+                2. Innovación: Ofrecemos soluciones energéticas de vanguardia.<br>
+                3. Orientación al cliente: Soluciones personalizadas y eficientes.<br>
+                4. Trabajo en equipo: Colaboración y aprovechamiento máximo de habilidades.<br>
+                5. Integridad: Honestidad, transparencia y ética en nuestras decisiones.<br>
+                6. Excelencia: Calidad en proyectos y servicios.<br>
+                7. Respeto: Valoramos la diversidad y la cultura.`,
+            image: '/images/features/solar3.jpg',
+        }
+    ];
 </script>
 
-<ContentSection
-	id="features"
-	title="Features"
-	description="Here are some of the features of this template"
->
-	<div class="features-container">
-		<div class="three-group-grid">
-			{#each features as feature}
-				<FeatureCard
-					name={feature.name}
-					description={feature.description}
-					image={feature.image}
-					tags={feature.tags}
-				/>
-			{/each}
-		</div>
-	</div>
+<ContentSection title="Sobre Nosotros" description="Explora nuestra misión, visión y valores.">
+    <div class="sections-container">
+        {#each sections as section}
+            <div class="section" id={section.id}>
+                <div class="section-content">
+                    <h2>{section.title}</h2>
+                    <p>{@html section.description}</p>
+                    {#if section.cta}
+                        <a href={section.link} class="cta-button">{section.cta}</a>
+                    {/if}
+                </div>
+                <div class="section-image">
+                    <img src={section.image} alt={section.title} />
+                </div>
+            </div>
+        {/each}
+    </div>
 </ContentSection>
 
 <style lang="scss">
-	@import '$lib/scss/breakpoints.scss';
+    .sections-container {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
 
-	.features-container {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-gap: 20px;
-	}
+        .section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 20px;
 
-	.three-group-grid {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		grid-gap: 20px;
+            &:nth-child(even) {
+                grid-template-columns: 1fr 1fr;
+                .section-content {
+                    order: 2; /* Intercala contenido e imagen en pares */
+                }
+            }
 
-		@media (max-width: 1085px) {
-			grid-template-columns: 1fr 1fr;
-		}
+            .section-content {
+                h2 {
+                    color: #333;
+                    font-size: 2.5rem;
+                    margin-bottom: 20px;
+                }
 
-		@include for-phone-only {
-			grid-template-columns: 1fr;
-		}
+                p {
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                }
 
-		// Select every 3 elements, starting from position 2
-		// And make it take up 2 rows
-		@media (min-width: 1086px) {
-			> :global(:nth-child(3n + 2)) {
-				grid-row: span 2;
-			}
-		}
+                .cta-button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #4caf50;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    transition: background-color 0.3s;
 
-		// Select every 3 elements, starting from position 1
-		// And make it take up 2 columns
-		> :global(:nth-child(3n + 1)) {
-			@media (max-width: 1085px) {
-				grid-column: span 2;
-			}
+                    &:hover {
+                        background-color: #45a049;
+                    }
+                }
+            }
 
-			@include for-tablet-portrait-down {
-				grid-template-columns: 1fr;
-				grid-column: unset;
-			}
-		}
-	}
+            .section-image img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .sections-container .section {
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            .section-content {
+                order: 1;
+            }
+        }
+    }
 </style>

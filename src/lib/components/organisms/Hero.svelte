@@ -6,72 +6,145 @@
 </script>
 
 <section id="hero">
-	<h1 class="hello">Optimización Energética para Hogares con Energía Solar en Ecuador (OEHESE) </h1>
-	<p class="intro">
-		<span class="left">⚡ Innovación que impulsa ,</span>
-		<span class="right">un futuro sostenible...🌱.</span>
-	</p>
-	<div class="ctas">
-		<Sparkles>
-			<Button href="https://github.com/matfantinel/sveltekit-static-blog-template">
-				<GitHubIcon slot="icon" />
-				Source Code
-
+	<div class="content">
+		<h1 class="hello">Optimización Energética para Hogares con Energía Solar en Ecuador (OEHESE)</h1>
+		<p class="intro">
+			<span class="left">⚡ Innovación que impulsa ,</span>
+			<span class="right">un futuro sostenible...🌱.</span>
+		</p>
+		<div class="ctas">
+			<Sparkles>
+				<Button href="https://github.com/matfantinel/sveltekit-static-blog-template">
+					<GitHubIcon slot="icon" />
+					Source Code
+				</Button>
+			</Sparkles>
+			<Button color="primary" href="https://histoire-sveltekit-static-blog-template.vercel.app/">
+				<FeaturesIcon slot="icon" />
+				Components
 			</Button>
-		</Sparkles>
-		<Button color="primary" href="https://histoire-sveltekit-static-blog-template.vercel.app/">
-			<FeaturesIcon slot="icon" />
-			Components
-		</Button>
+		</div>
+	</div>
+
+	<div class="metrics">
+		<img src="/images/features/panel-home.jpg" alt="Panel Solar" class="solar-image" />
+		<div class="stats">
+			<div>
+				<span class="number">4320000</span>
+				<p>KWh/año Energía generada</p>
+			</div>
+			<div>
+				<span class="number">8109</span>
+				<p>Unidades Paneles FV instalados</p>
+			</div>
+			<div>
+				<span class="number">978</span>
+				<p>Toneladas de Ahorro en emisión CO2</p>
+			</div>
+		</div>
 	</div>
 </section>
+
 
 <style lang="scss">
 	@import '$lib/scss/breakpoints.scss';
 
 	#hero {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 15px;
-		position: relative;
-		padding: 80px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 60px 20px;
+	background-color: #f9f9f9;
 
-		@include for-phone-only {
-			padding: 40px 0 50px;
-		}
+	.content,
+	.metrics {
+		flex: 1;
+	}
+
+	.content {
+		padding-right: 20px;
 
 		.hello {
-			text-align: center;
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: #333;
+			margin-bottom: 20px;
 		}
 
 		.intro {
-			font-weight: 500;
 			font-size: 1.4rem;
-			width: min(100%, 440px);
-			display: flex;
-			flex-direction: column;
+			color: #555;
+			margin-bottom: 20px;
 
 			.left {
 				text-align: left;
 			}
+
 			.right {
 				text-align: right;
-			}
-
-			@include for-phone-only {
-				display: none;
 			}
 		}
 
 		.ctas {
 			display: flex;
-			flex-wrap: wrap;
+			gap: 15px;
 			align-items: center;
-			justify-content: center;
-			gap: 10px;
-			width: 100%;
+
+			Button {
+				padding: 10px 20px;
+			}
 		}
 	}
+
+	.metrics {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+
+		.solar-image {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+		}
+
+		.stats {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+
+			div {
+				text-align: center;
+
+				.number {
+					font-size: 2rem;
+					font-weight: bold;
+					color: #333;
+				}
+
+				p {
+					font-size: 1rem;
+					color: #555;
+				}
+			}
+		}
+	}
+
+	/* Ajustes para pantallas pequeñas */
+		@media (max-width: 768px) {
+			flex-direction: column;
+			text-align: center;
+
+			.content,
+			.metrics {
+				max-width: 100%;
+				padding-right: 0;
+			}
+
+			.stats {
+				flex-direction: column;
+			}
+		}
+	}
+
 </style>

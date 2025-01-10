@@ -1,70 +1,126 @@
 <script>
-	import FooterWave from '$lib/icons/footer-wave.svelte';
-	import Socials from '$lib/components/molecules/Socials.svelte';
-	import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
-	import RssLink from '$lib/components/atoms/RssLink.svelte';
+    import Socials from '$lib/components/molecules/Socials.svelte';
+    import RssLink from '$lib/components/atoms/RssLink.svelte';
+    import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
 </script>
 
 <footer>
-	<div class="wave">
-		<FooterWave />
-	</div>
-	<div class="content">
-		<div class="copyright">
-			This template was built by <a
-				href="https://fantinel.dev?utm_source=site-template"
-				target="_blank"
-				rel="noopener noreferrer">Matheus Fantinel</a
-			>.
-		</div>
-		<div class="credits">
-			Powered by <a href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer"
-				>SvelteKit</a
-			>. Icons by
-			<a href="https://iconoir.com/" target="_blank" rel="noopener noreferrer">Iconoir</a>.
-		</div>
-		<div class="socials">
-			<Socials />
-			<RssLink />
-			<ThemeToggle />
-		</div>
-	</div>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>Sobre Nosotros</h3>
+            <p>
+                Soluciones de energía sostenible para hogares y empresas,
+                promoviendo un futuro más verde y sostenible.
+            </p>
+        </div>
+
+        <div class="footer-section links">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="/about">Sobre</a></li>
+                <li><a href="/services">Servicios</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section social">
+            <h3>Síguenos</h3>
+            <div class="icons">
+                <Socials />
+                <RssLink />
+                <ThemeToggle />
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            &copy; 2024 Zero Energy Home. Todos los derechos reservados. <br />
+            Desarrollado con <a href="https://kit.svelte.dev/">SvelteKit</a> | Icons by
+            <a href="https://iconoir.com/">Iconoir</a>
+        </p>
+    </div>
 </footer>
 
 <style lang="scss">
-	footer {
-		height: 340px;
-		width: 100%;
-		background: linear-gradient(60deg, var(--color--waves-start) 0%, var(--color--waves-end) 100%);
-		display: grid;
-		grid-template-rows: 120px 1fr;
+footer {
+    background: linear-gradient(120deg, #e6f8f7, #c0e3e7);
+    color: #333;
+    font-size: 13px;
 
-		.content {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			gap: 15px;
-			font-weight: 600;
-			text-align: center;
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10%;
+        flex-wrap: wrap;
 
-			.credits {
-				font-weight: 400;
-				font-size: 90%;
-				color: var(--color--text-shade);
-			}
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 10px;
 
-			.socials {
-				display: flex;
-				align-items: center;
-				gap: 20px;
-			}
-		}
+            h3 {
+                color: #4caf50;
+                font-size: 14px;
+                margin-bottom: 8px;
+                font-weight: bold;
+            }
 
-		a {
-			&:hover {
-				filter: drop-shadow(0px 0px 3px var(--color--primary));
-			}
-		}
-	}
+            p,
+            ul {
+                margin: 0;
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin-bottom: 5px;
+
+                    a {
+                        text-decoration: none;
+                        color: #333;
+
+                        &:hover {
+                            color: #4caf50;
+                        }
+                    }
+                }
+            }
+
+            .icons {
+                display: flex;
+                gap: 10px;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    color: #4caf50;
+
+                    &:hover {
+                        color: #388e3c;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #dcdcdc;
+        font-size: 12px;
+
+        a {
+            color: #4caf50;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
 </style>

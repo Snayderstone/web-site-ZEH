@@ -3,6 +3,7 @@
 	import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
 	import RssLink from '$lib/components/atoms/RssLink.svelte';
 	import GitHubIcons from '$lib/components/atoms/GitHubLink.svelte';
+	import Button from '$lib/components/atoms/Button.svelte';
 
 	export let showBackground = false;
 </script>
@@ -13,27 +14,14 @@
 			<Logo />
 		</a>
 
+		<!--Enlaces del menú-->
 		<div class="links">
-			<a href="/">Home</a>
-		</div>
-
-		<div class="links">
-			<a href="/lineal-programing">Simulador OTPSB</a>
-		</div>
-
-		<div class="links">
-			<a href="/about">About</a>
-		</div>
-
-		<div class="links">
-			<a href="/contactUs">Contact Us</a>
-		</div>
-
-		<div class="links">
-			<a href="/blog">Blog</a>
-			<RssLink />
-			<ThemeToggle />
-			<GitHubIcons />
+			<a href="/">INICIO</a>
+			<a href="/lineal-programing">SIMULADOR OTPSB</a>
+			<a href="/about">SOBRE NOSOTROS</a>
+			<a href="/contactUs">CONTACTO</a>
+			<a href="/blog">BLOG</a>
+			
 		</div>
 	</nav>
 </header>
@@ -43,10 +31,12 @@
 
 	header {
 		position: relative;
-		padding: 30px 0;
+		padding: 20px 30px;
+		background-color: white;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
 		@include for-phone-only {
-			padding: 20px 0;
+			padding: 20px;
 		}
 
 		&.has-background {
@@ -60,39 +50,46 @@
 		.container {
 			display: flex;
 			align-items: center;
-			gap: 30px;
-
-			@include for-phone-only {
-				.links {
-					a {
-						display: none;
-					}
-				}
-			}
+			justify-content: space-between;
 		}
 
 		.logo {
-			height: 44px;
 			flex: 1;
-		}
-
-		a {
-			color: var(--color--text);
+			height: 50px;
 		}
 
 		.links {
 			display: flex;
+			font-weight: bold;
+			text-decoration: dashed;
 			align-items: center;
-			justify-content: flex-end;
-			gap: 30px;
+			justify-content: center;
+			gap: 40px;
 
 			a {
 				text-decoration: none;
+				color: #333;
+				font-weight: 500;
 
 				&:hover {
-					color: var(--color--primary);
-					filter: drop-shadow(0px 0px 3px var(--color--primary));
+					color: #007bff;
 				}
+			}
+		}
+
+		/* Media queries */
+		@include for-phone-only {
+			.container {
+				flex-wrap: wrap; /* Permite que los elementos bajen en pantallas pequeñas */
+			}
+
+			.links {
+				justify-content: center;
+				flex-wrap: wrap; /* Ajusta los enlaces si el espacio es reducido */
+			}
+
+			.contact-button {
+				justify-content: center; /* Centra el botón en pantallas pequeñas */
 			}
 		}
 	}

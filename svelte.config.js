@@ -14,9 +14,6 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			handleHttpError: 'warn'
-		},
-		paths: {
-			base: '/web-site-ZEH'
 		}
 	},
 	preprocess: [

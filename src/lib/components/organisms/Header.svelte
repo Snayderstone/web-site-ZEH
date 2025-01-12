@@ -17,11 +17,17 @@
 		<!--Enlaces del menú-->
 		<div class="links">
 			<a href="/">INICIO</a>
-			<a href="/lineal-programing">SIMULADOR OTPSB</a>
+			<a href="/lineal-programing">SIMULADOR T.PS.B</a>
+
+			<a href="/nonlinear-programing">SIMULADOR O.P.S</a>
+
+			<a href="/monte-carlo-model">SIMULADOR RENTABILIDAD</a>
+
+			<a href="/monte-carlo-model">SIMULADOR PRED. CONSUMO E. </a>
+
 			<a href="/about">SOBRE NOSOTROS</a>
 			<a href="/contactUs">CONTACTO</a>
 			<a href="/blog">BLOG</a>
-			
 		</div>
 	</nav>
 </header>

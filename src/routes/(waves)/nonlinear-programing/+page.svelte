@@ -18,7 +18,7 @@
 		error.set('');
 		try {
 			const response = await fetch(
-				'https://congenial-halibut-xvrxpx9qrjg2v65w-5000.app.github.dev/',
+				'https://congenial-halibut-xvrxpx9qrjg2v65w-5000.app.github.dev/api/v1/solar/',
 				{
 					method: 'POST',
 					headers: {

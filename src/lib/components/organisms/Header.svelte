@@ -18,16 +18,30 @@
 		</div>
 
 		<div class="links">
-			<a href="/lineal-programing">Simulador OTPSB</a>
+			<a href="/lineal-programing">S1 </a>
 		</div>
+		<div class="links">
+			<a href="/nonlinear-programing">S2</a>
+		</div>
+		<div class="links">
+			<a href="/monte-carlo-model">S3</a>
+		</div>
+		<div class="links">
+			<a href="/time-series">S4</a>
+		</div>
+
+
+
 
 		<div class="links">
 			<a href="/about">About</a>
 		</div>
 
+
 		<div class="links">
 			<a href="/contactUs">Contact Us</a>
 		</div>
+
 
 		<div class="links">
 			<a href="/blog">Blog</a>
@@ -35,6 +49,8 @@
 			<ThemeToggle />
 			<GitHubIcons />
 		</div>
+
+
 	</nav>
 </header>
 
